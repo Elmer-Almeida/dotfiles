@@ -6,6 +6,6 @@
 
  Clone the repo to your `$HOME` directory. All the configurations should be sourced by the respective programs.
 
- ### Contact
+ ## Contact
 
  Contact me at [almeielm@sheridancollege.ca](almeielm@sheridancollege.ca)

@@ -1,0 +1,35 @@
+# NeoVim
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+
+# General
+alias ...="cd ../../"
+alias aliases="vi ~/.aliases"
+alias bfull="brew update; brew upgrade; brew doctor"
+
+# Nvim
+alias nplugins="vi ~/.config/nvim/lua/elmer/plugins/init.lua"
+alias nvimrc="vi ~/.config/nvim/init.lua"
+
+# Tmux
+alias tmuxconf="vi ~/.tmux.conf"
+
+# Git
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit -m"
+alias gca="git commit -am"
+alias gp="git push"
+alias gpm="git push -u origin master"
+
+alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+
+# Directories
+alias code="cd ~/Code"
+alias desktop="cd ~/Desktop"
+alias downloads="cd ~/Downloads"
+alias documents="cd ~/Documents"
+
+# Project Directories
+alias memorygame="cd ~/Code/React\ Projects/memory-game/"

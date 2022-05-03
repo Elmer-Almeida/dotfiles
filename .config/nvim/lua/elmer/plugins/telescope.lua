@@ -3,7 +3,7 @@ require('telescope').setup {
   defaults = {
     layout_config = {
       width = 0.75,
-      prompt_position = "bottom",
+      prompt_position = "top",
       preview_cutoff = 120,
       horizontal = { mirror = false },
       vertical = { mirror = false }
@@ -11,8 +11,8 @@ require('telescope').setup {
     find_command = {
       'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
     },
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = "  ",
+    selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
@@ -53,8 +53,6 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 keymap('n', '<leader>ff', '<cmd>lua require "elmer.plugins.telescope-config".project_files()<CR>', opts)
---keymap('n', '<leader>ff', '<cmd>project_files()<CR>', opts)
---keymap('n', '<leader>fg', '<cmd>Telescope git_files<CR>', opts)
 keymap('n', '<leader>fs', '<cmd>Telescope live_grep<CR>', opts)
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
 keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', opts)

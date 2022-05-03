@@ -4,6 +4,7 @@ alias vi="nvim"
 alias vim="nvim"
 
 # General
+alias so="source"
 alias ...="cd ../../"
 alias aliases="vi ~/.aliases"
 alias bfull="brew update; brew upgrade; brew doctor"
@@ -23,6 +24,7 @@ alias gca="git commit -am"
 alias gp="git push"
 alias gpm="git push -u origin master"
 
+# dotfiles github config
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # Directories
@@ -30,6 +32,7 @@ alias code="cd ~/Code"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias documents="cd ~/Documents"
+alias react="cd ~/Code/React\ Projects"
 
 # Project Directories
 alias memorygame="cd ~/Code/React\ Projects/memory-game/"

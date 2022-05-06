@@ -16,8 +16,6 @@ alias lla="exa --long --all --icons --sort=ext --header --created --modified --c
 
 alias tree="exa --tree --long --icons --level=2 --extended --classify"
 
-alias c="clear"
-
 # source the general aliases file
 source ~/.aliases
 

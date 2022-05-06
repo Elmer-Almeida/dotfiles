@@ -44,6 +44,8 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'onsails/lspkind.nvim'
 
+  use 'simrat39/rust-tools.nvim'
+
   -- require all plugins
   require 'elmer.plugins.lualine'
   require 'elmer.plugins.treesitter'

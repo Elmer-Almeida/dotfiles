@@ -1,5 +1,5 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "html", "javascript", "typescript", "tsx", "lua", "yaml", "c", "cpp", "css", "json" },
+	ensure_installed = { "html", "javascript", "typescript", "tsx", "lua", "yaml", "c", "cpp", "css", "json", "hcl", "rust" },
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,

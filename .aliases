@@ -8,6 +8,8 @@ alias so="source"
 alias ...="cd ../../"
 alias aliases="vi ~/.aliases"
 alias bfull="brew update; brew upgrade; brew doctor"
+alias c="clear"
+alias cl="clear"
 
 # Nvim
 alias nplugins="vi ~/.config/nvim/lua/elmer/plugins/init.lua"
@@ -28,6 +30,7 @@ alias gpm="git push -u origin master"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # Directories
+alias clients="cd ~/Code/Clients"
 alias code="cd ~/Code"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
@@ -36,3 +39,9 @@ alias react="cd ~/Code/React\ Projects"
 
 # Project Directories
 alias memorygame="cd ~/Code/React\ Projects/memory-game/"
+
+# Python
+alias activate="source env/bin/activate.fish"
+
+# Documentation
+alias rustdocs="rustup doc --book"

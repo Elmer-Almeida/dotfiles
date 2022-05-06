@@ -6,8 +6,8 @@ local option = vim.o
 vim.cmd [[ filetype plugin indent on ]]
 
 -- prevent comments on next line
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+--vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+--vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- transparent background
 vim.cmd("autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE")

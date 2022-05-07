@@ -43,11 +43,6 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
-
-		["<C-Space>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Insert,
-			select = true,
-		}),
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },

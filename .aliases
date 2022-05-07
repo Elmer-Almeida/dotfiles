@@ -5,6 +5,7 @@ alias vim="nvim"
 
 # General
 alias so="source"
+alias saliases="source ~/.aliases"
 alias ...="cd ../../"
 alias aliases="vi ~/.aliases"
 alias bfull="brew update; brew upgrade; brew doctor"
@@ -35,10 +36,11 @@ alias code="cd ~/Code"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias documents="cd ~/Documents"
-alias react="cd ~/Code/React\ Projects"
 
 # Project Directories
-alias memorygame="cd ~/Code/React\ Projects/memory-game/"
+alias projects="cd ~/Code/Projects"
+alias personal="cd ~/Code/Personal"
+alias capstone="cd ~/Code/Capstone"
 
 # Python
 alias activate="source env/bin/activate.fish"

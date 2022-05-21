@@ -4,6 +4,7 @@ local util = require("lspconfig.util")
 local configs = require("lspconfig.configs")
 
 local language_servers = {
+	"tailwindcss",
 	"html",
 	"cssls",
 	"tsserver",

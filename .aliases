@@ -20,6 +20,8 @@ alias nvimrc="vi ~/.config/nvim/init.lua"
 alias tmuxconf="vi ~/.tmux.conf"
 
 # Git
+alias g="git"
+alias gs="git status"
 alias ga="git add"
 alias gaa="git add ."
 alias gc="git commit -m"
@@ -42,8 +44,16 @@ alias projects="cd ~/Code/Projects"
 alias personal="cd ~/Code/Personal"
 alias capstone="cd ~/Code/Capstone"
 
+alias ea="cd ~/Code/Personal/elmeralmeida"
+
 # Python
 alias activate="source env/bin/activate.fish"
 
 # Documentation
 alias rustdocs="rustup doc --book"
+
+# Django Shortcuts
+alias pym="python manage.py"
+alias pymr="python manage.py runserver"
+alias pymmm="python manage.py makemigrations"
+alias pymm="python manage.py migrate"

@@ -1,24 +1,23 @@
 vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "S",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "",
-    untracked = "U",
-    ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
+	default = "",
+	symlink = "",
+	git = {
+		unstaged = "",
+		staged = "S",
+		unmerged = "",
+		renamed = "➜",
+		deleted = "",
+		untracked = "U",
+		ignored = "◌",
+	},
+	folder = {
+		default = "",
+		open = "",
+		empty = "",
+		empty_open = "",
+		symlink = "",
+	},
 }
-
 
 require("nvim-tree").setup({
 	auto_reload_on_write = true,
@@ -134,7 +133,7 @@ require("nvim-tree").setup({
 }) -- END_DEFAULT_OPTS
 
 -- auto close if tree is the last buffer
-vim.cmd [[ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
+vim.cmd([[ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]])
 
 -- NERDTree
 local keymap = vim.api.nvim_set_keymap

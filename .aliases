@@ -39,7 +39,7 @@ alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias documents="cd ~/Documents"
 
-# Project Directories
+# Code Directories
 alias projects="cd ~/Code/Projects"
 alias personal="cd ~/Code/Personal"
 alias capstone="cd ~/Code/Capstone"
@@ -57,3 +57,6 @@ alias pym="python manage.py"
 alias pymr="python manage.py runserver"
 alias pymmm="python manage.py makemigrations"
 alias pymm="python manage.py migrate"
+
+# Projects
+alias ea="cd ~/Code/Personal/elmeralmeida"

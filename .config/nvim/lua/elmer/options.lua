@@ -46,9 +46,9 @@ option.cmdheight = 1
 option.showcmd = true
 option.autochdir = true
 option.wildmenu = true
-option.showtabline = 4
+option.showtabline = 0
 option.scrolloff = 999
-option.sidescrolloff = 3
+option.sidescrolloff = 10
 option.guicursor = "i:block"
 option.updatetime = 300
 

@@ -1,5 +1,18 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "html", "javascript", "typescript", "tsx", "lua", "yaml", "c", "cpp", "css", "json", "hcl", "rust" },
+	ensure_installed = {
+		"html",
+		"javascript",
+		"typescript",
+		"tsx",
+		"lua",
+		"yaml",
+		"c",
+		"cpp",
+		"css",
+		"json",
+		"hcl",
+		"rust",
+	},
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
@@ -28,11 +41,11 @@ require("nvim-treesitter.configs").setup({
 				goto_previous_usage = "<C-p>",
 			},
 		},
-    smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "gr"
-      }
-    }
+		smart_rename = {
+			enable = true,
+			keymaps = {
+				smart_rename = "gr",
+			},
+		},
 	},
 })

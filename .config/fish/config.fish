@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 set fish_greeting
+set SPACEFISH_PROMPT_ADD_NEWLINE false
 
 # Theme
 theme_gruvbox "dark" "hard"
@@ -21,3 +22,10 @@ source ~/.aliases
 
 # choose the default nvm LTS
 nvm use lts
+
+# add some spacer
+#echo ''
+#echo ''
+
+# neofetch to show summary of computer state
+#neofetch

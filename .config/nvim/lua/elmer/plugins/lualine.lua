@@ -29,7 +29,7 @@ local conditions = {
 	check_git_workspace = function()
 		local filepath = vim.fn.expand("%:p:h")
 		local gitdir = vim.fn.finddir(".git", filepath .. ";")
-		return gitdir and gitdir > 0 and gitdir < filepath
+		return gitdir and #gitdir > 0 and #gitdir < #filepath
 	end,
 }
 
@@ -38,7 +38,6 @@ local config = {
 	options = {
 		component_separators = "",
 		section_separators = "",
-		always_divide_middle = true,
 		theme = {
 			normal = { c = { fg = colors.fg, bg = colors.bg } },
 			inactive = { c = { fg = colors.fg, bg = colors.bg } },
@@ -61,12 +60,12 @@ local config = {
 		lualine_z = {},
 	},
 	tabline = {
-		lualine_a = { "buffers" },
-		lualine_b = { "branch" },
-		lualine_c = {},
-		lualine_x = {},
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { require("tabline").tabline_buffers },
+		lualine_x = { require("tabline").tabline_tabs },
 		lualine_y = {},
-		lualine_z = { "tabs" },
+		lualine_z = {},
 	},
 }
 

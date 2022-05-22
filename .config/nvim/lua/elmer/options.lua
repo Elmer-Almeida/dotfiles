@@ -16,6 +16,7 @@ vim.cmd("autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE")
 -- Global options --
 ---------------------------------------------------
 global.mapleader = " "
+global.laststatus = 2
 
 ---------------------------------------------------
 -- Window options --
@@ -51,6 +52,7 @@ option.scrolloff = 999
 option.sidescrolloff = 10
 option.guicursor = "i:block"
 option.updatetime = 300
+option.laststatus = 2
 
 -- search
 option.hlsearch = false

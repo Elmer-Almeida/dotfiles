@@ -10,6 +10,13 @@ return require("packer").startup(function()
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 	use({
+		"kdheepak/tabline.nvim",
+		config = function()
+			require("tabline").setup({ enable = false })
+		end,
+		requires = { "hoob3rt/lualine.nvim", "kyazdani42/nvim-web-devicons" },
+	})
+	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icon

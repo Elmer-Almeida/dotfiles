@@ -1,24 +1,3 @@
-vim.g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
-	git = {
-		unstaged = "",
-		staged = "S",
-		unmerged = "",
-		renamed = "➜",
-		deleted = "",
-		untracked = "U",
-		ignored = "◌",
-	},
-	folder = {
-		default = "",
-		open = "",
-		empty = "",
-		empty_open = "",
-		symlink = "",
-	},
-}
-
 require("nvim-tree").setup({
 	hijack_cursor = true,
 	update_cwd = true,
@@ -90,23 +69,18 @@ require("nvim-tree").setup({
 		},
 	},
 	diagnostics = {
-		enable = true,
+		--enable = true,
 	},
 })
 
 -- Mappings
+
 local function find_file_no_focus()
 	require("nvim-tree").find_file(true)
 	vim.cmd("noautocmd wincmd p")
 end
 
--- Toggle the tree
--- Two arguments in toggle() control whether the current file will be revealed,
--- and whether the tree is not focused.
-vim.keymap.set("n", "<leader>n", function()
-	require("nvim-tree").toggle(false, true)
-end, { silent = true })
-
+vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>tt", "<Cmd>NvimTreeFocus<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>tf", find_file_no_focus, { silent = true })
 vim.keymap.set("n", "<Leader>tr", "<Cmd>NvimTreeRefresh<CR>", { silent = true })

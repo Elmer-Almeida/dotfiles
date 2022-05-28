@@ -1,51 +1,84 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
-		"html",
-		"javascript",
-		"typescript",
-		"tsx",
-		"lua",
-		"yaml",
+		"bash",
 		"c",
 		"cpp",
+		"cmake",
 		"css",
+		"comment",
+		"go",
+		"html",
+		"java",
+		"javascript",
 		"json",
-		"hcl",
+		"jsonc",
+		"lua",
+		"markdown",
+		"make",
+		"python",
+		"query",
 		"rust",
+		"regex",
+		"tsx",
+		"typescript",
+		"vim",
 	},
+
+	ignore_install = {},
+
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = false,
+		disable = { "vim" }, -- List of language that will be disabled
 	},
 	indent = {
 		enable = true,
 	},
 	rainbow = {
 		enable = true,
-		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-		max_file_lines = nil, -- Do not enable for files with more than n lines, int
+		extended_mode = true,
+		max_file_lines = nil,
 	},
-	refactor = {
-		highlight_definitions = {
+
+	textobjects = {
+		select = {
 			enable = true,
-			-- Set to false if you have an `updatetime` of ~100.
-			clear_on_cursor_move = true,
-			highlight_current_scope = {
-				enable = true,
-			},
-		},
-		navigation = {
-			enable = true,
+			lookahead = true,
 			keymaps = {
-				goto_next_usage = "<C-n>",
-				goto_previous_usage = "<C-p>",
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+				["aa"] = "@parameter.outer",
+				["ia"] = "@parameter.inner",
 			},
 		},
-		smart_rename = {
+		move = {
 			enable = true,
-			keymaps = {
-				smart_rename = "gr",
+			set_jumps = true,
+			goto_next_start = {
+				["]f"] = "@function.outer",
+				["]a"] = "@parameter.inner",
+				["]c"] = "@class.outer",
+			},
+			goto_next_end = {
+				["]F"] = "@function.outer",
+				["]C"] = "@class.outer",
+			},
+			goto_previous_start = {
+				["[f"] = "@function.outer",
+				["[a"] = "@parameter.inner",
+				["[c"] = "@class.outer",
+			},
+			goto_previous_end = {
+				["[F"] = "@function.outer",
+				["[C"] = "@class.outer",
 			},
 		},
+	},
+	context_commentstring = {
+		enable = true,
+	},
+	playground = {
+		enable = true,
 	},
 })

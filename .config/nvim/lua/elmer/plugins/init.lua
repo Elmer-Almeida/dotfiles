@@ -9,13 +9,8 @@ return require("packer").startup(function()
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-	use({
-		"kdheepak/tabline.nvim",
-		config = function()
-			require("tabline").setup({ enable = false })
-		end,
-		requires = { "hoob3rt/lualine.nvim", "kyazdani42/nvim-web-devicons" },
-	})
+	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
+
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
@@ -33,6 +28,8 @@ return require("packer").startup(function()
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("p00f/nvim-ts-rainbow")
 	use("nvim-treesitter/nvim-treesitter-refactor")
+	use("nvim-treesitter/playground")
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
@@ -55,6 +52,7 @@ return require("packer").startup(function()
 
 	-- require all plugins
 	require("elmer.plugins.lualine")
+	require("elmer.plugins.bufferline")
 	require("elmer.plugins.treesitter")
 	require("elmer.plugins.telescope")
 	require("elmer.plugins.lsp")

@@ -4,6 +4,16 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 
+local get_bufnrs = function()
+	local buf = vim.api.nvim_get_current_buf()
+	local byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
+	-- Disable buffer source for large file (1MB)
+	if byte_size > 1024 * 1024 then
+		return {}
+	end
+	return { buf }
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -25,16 +35,27 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 	}, {
-		{ name = "buffer" },
+		{
+			name = "buffer",
+			keyword_length = 4,
+			option = {
+				get_bufnrs = get_bufnrs,
+			},
+		},
+		{ name = "path" },
+		{ name = "nvim_lua" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
-			mode = "sumbol",
+			mode = "symbol",
 			maxwidth = 50,
 			before = function(entry, vim_item)
 				return vim_item
 			end,
 		}),
+	},
+	experimental = {
+		ghost_text = true,
 	},
 })
 
@@ -47,11 +68,16 @@ cmp.setup.filetype("gitcommit", {
 	}),
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- Use buffer source for `/`
 cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = "buffer" },
+		{
+			name = "buffer",
+			option = {
+				get_bufnrs = get_bufnrs,
+			},
+		},
 	},
 })
 

@@ -22,13 +22,18 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"typescript",
 		"vim",
+		"dockerfile",
+		"kotlin",
+		"graphql",
+		"fish",
+		"scss",
 	},
 
 	ignore_install = {},
 
 	highlight = {
 		enable = true,
-		disable = { "vim" }, -- List of language that will be disabled
+		disable = {},
 	},
 	indent = {
 		enable = true,

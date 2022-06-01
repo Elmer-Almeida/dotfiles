@@ -19,6 +19,8 @@ return require("packer").startup(function()
 	})
 	use("mbbill/undotree")
 
+	use("christoomey/vim-tmux-navigator")
+
 	use("lewis6991/gitsigns.nvim")
 	use("norcalli/nvim-colorizer.lua")
 	use("akinsho/toggleterm.nvim")

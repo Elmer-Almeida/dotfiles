@@ -24,7 +24,6 @@ require("nvim-tree").setup({
 		mappings = {
 			custom_only = true,
 			list = {
-				-- Mappings to suit my taste and be consistent with lf
 				{ key = "<CR>", action = "edit" },
 				{ key = "O", action = "edit_no_picker" },
 				{ key = "<C-v>", action = "vsplit" },
@@ -40,14 +39,14 @@ require("nvim-tree").setup({
 				{ key = "R", action = "refresh" },
 				{ key = "<BS>", action = "dir_up" },
 				{ key = ".", action = "cd" },
-				{ key = "zi", action = "toggle_ignored" }, -- toggle visibility of files or directories in filters.custom list
+				{ key = "zi", action = "toggle_ignored" },
 				{ key = "zh", action = "toggle_dotfiles" },
 				{ key = "T", action = "trash" },
 				{ key = "d", action = "remove" },
 				{ key = "yy", action = "copy" },
 				{ key = "x", action = "cut" },
 				{ key = "p", action = "paste" },
-				{ key = "<C-n>", action = "create" }, -- create a file, or a directory by appending `/`
+				{ key = "<C-n>", action = "create" },
 				{ key = "r", action = "rename" },
 				{ key = "<C-r>", action = "full_rename" },
 				{ key = "[g", action = "prev_git_item" },

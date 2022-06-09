@@ -43,6 +43,7 @@ alias documents="cd ~/Documents"
 alias projects="cd ~/Code/Projects"
 alias personal="cd ~/Code/Personal"
 alias capstone="cd ~/Code/Capstone"
+alias learning="cd ~/Code/Learning"
 
 alias ea="cd ~/Code/Personal/elmeralmeida"
 

@@ -68,7 +68,7 @@ option.ignorecase = true
 
 -- theme
 option.background = "dark"
-vim.opt.termguicolors = true
+option.termguicolors = true
 
 -- error bells
 option.errorbells = false

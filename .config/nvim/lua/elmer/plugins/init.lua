@@ -3,9 +3,9 @@ local use = require("packer").use
 return require("packer").startup(function()
   use("wbthomason/packer.nvim")
 
-  --use({ "lifepillar/vim-gruvbox8", config = "vim.cmd [[ colorscheme gruvbox8 ]]" })
+  use({ "lifepillar/vim-gruvbox8", config = "vim.cmd [[ colorscheme gruvbox8 ]]" })
   --use({ "morhetz/gruvbox", config = "vim.cmd [[ colorscheme gruvbox ]]" })
-  use({ "joshdick/onedark.vim", config = "vim.cmd [[ colorscheme onedark ]]" })
+  --use({ "joshdick/onedark.vim", config = "vim.cmd [[ colorscheme onedark ]]" })
 
   use({
     "nvim-lualine/lualine.nvim",
@@ -16,7 +16,7 @@ return require("packer").startup(function()
   use({
     "kyazdani42/nvim-tree.lua",
     requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icon
+      "kyazdani42/nvim-web-devicons",
     },
   })
   use("mbbill/undotree")

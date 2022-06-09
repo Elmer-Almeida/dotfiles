@@ -20,12 +20,12 @@ alias tree="exa --tree --long --icons --level=2 --extended --classify"
 # source the general aliases file
 source ~/.aliases
 
-# choose the default nvm LTS
-nvm use lts
-
 # add some spacer
 #echo ''
 #echo ''
 
 # neofetch to show summary of computer state
 #neofetch
+
+set -x NVM_DIR ~/.nvm
+nvm use lts &> /dev/null

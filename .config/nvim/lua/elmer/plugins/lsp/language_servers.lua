@@ -18,23 +18,24 @@ local language_servers = {
   "rust_analyzer",
 }
 
--- setup ls_emmet LSP
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 for _, server in ipairs(language_servers) do
   lspconfig[server].setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-      if client.resolved_capabilities.document_formatting then
-        nvim_command([[augroup Format]])
-        nvim_command([[autocmd! * <buffer>]])
-        nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
-        nvim_command([[augroup END]])
+      -- if client.resolved_capabilities.document_formatting then
+      if client.server_capabilities.documentFormattingProvider then
+        nvim_command [[augroup Format]]
+        nvim_command [[autocmd! * <buffer>]]
+        nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+        nvim_command [[augroup END]]
       end
-      return require("aerial").on_attach
+      require("aerial").on_attach(client, bufnr)
     end,
   })
 end
+
+-- setup ls_emmet LSP
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 if not configs.ls_emmet then
   configs.ls_emmet = {

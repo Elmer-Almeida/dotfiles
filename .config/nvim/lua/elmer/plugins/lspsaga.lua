@@ -1,12 +1,18 @@
 local lspsaga = require("lspsaga")
+
 lspsaga.setup({
   debug = false,
   use_saga_diagnostic_sign = true,
+  error_sign = "",
+  warn_sign = "",
+  hint_sign = "",
+  infor_sign = "",
+  border_style = "round",
   -- diagnostic sign
-  error_sign = "",
-  warn_sign = "",
-  hint_sign = "",
-  infor_sign = "",
+  -- error_sign = "",
+  -- warn_sign = "",
+  -- hint_sign = "",
+  -- infor_sign = "",
   diagnostic_header_icon = "   ",
   -- code action title icon
   code_action_icon = " ",
@@ -36,7 +42,7 @@ lspsaga.setup({
     exec = "<CR>",
   },
   definition_preview_icon = "  ",
-  border_style = "single",
+  --border_style = "single",
   rename_prompt_prefix = "➤",
   rename_output_qflist = {
     enable = false,

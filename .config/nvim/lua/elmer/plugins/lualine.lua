@@ -9,14 +9,16 @@ local function simplifiedMode(str)
   return "  " .. (str == "V-LINE" and "VL" or (str == "V-BLOCK" and "VB" or str:sub(1, 1)))
 end
 
--- For location, show total lines
+local function customMode(str)
+  return " " .. str
+end
+
 local function customLocation(str)
   return string.gsub(str, "%w+", "%1" .. "/%%L", 1)
 end
 
--- For progress, add a fancy icon
 local function customProgress(str)
-  return " " .. str
+  return " " .. str .. " "
 end
 
 -- For filename, show the filename and the filesize
@@ -44,11 +46,12 @@ require("lualine").setup({
     lualine_a = {
       {
         "mode",
+        fmt = customMode,
       },
     },
     lualine_b = {
-      { "branch", icon = "", },
-      { "diff", symbols = { added = " ", modified = " ", removed = " " }, },
+      { "branch", icon = "" },
+      { "diff", symbols = { added = " ", modified = " ", removed = " " } },
       {
         "diagnostics",
         sources = { "nvim_diagnostic" },
@@ -92,14 +95,21 @@ require("lualine").setup({
         color = { fg = "#97cc7f", gui = "bold" },
       },
       { "filetype", color = { fg = "#51afef", gui = "bold" } },
-      { "encoding", color = { fg = "#ec5f67" } },
-      { "fileformat", color = { fg = "#c678dd" } }
+      --{ "encoding", color = { fg = "#ec5f67" } },
+      --{ "encoding", color = { fg = "#b3bbc7" } },
+      --{ "fileformat", color = { fg = "#c678dd" } },
     },
     lualine_y = {
-      { "location", fmt = customLocation, },
+      {
+        "location",
+        fmt = customLocation,
+        color = { fg = "#c678dd", gui = "bold" },
+      },
+      { "encoding", color = { fg = "#ec5f67", gui = "bold" } },
     },
     lualine_z = {
-      { "progress", fmt = customProgress, },
+      { "progress", fmt = customProgress },
+      "fileformat",
     },
   },
   inactive_sections = {

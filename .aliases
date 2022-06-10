@@ -19,6 +19,9 @@ alias nvimrc="vi ~/.config/nvim/init.lua"
 # Tmux
 alias tmuxconf="vi ~/.tmux.conf"
 
+# Alacritty
+alias alac="vi ~/.config/alacritty/alacritty.yml"
+
 # Git
 alias g="git"
 alias gs="git status"

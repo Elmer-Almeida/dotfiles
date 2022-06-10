@@ -40,7 +40,7 @@ return require("packer").startup(function()
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
-  use("williamboman/nvim-lsp-installer")
+  --use("williamboman/nvim-lsp-installer")
   use("neovim/nvim-lspconfig")
   use("tami5/lspsaga.nvim")
   use("windwp/nvim-autopairs")

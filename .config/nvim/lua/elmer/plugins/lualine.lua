@@ -47,20 +47,12 @@ require("lualine").setup({
       },
     },
     lualine_b = {
-      {
-        "branch",
-        icon = "",
-      },
-      {
-        "diff",
-        --symbols = { added = "+", modified = "~", removed = "-" },
-        symbols = { added = " ", modified = " ", removed = " " },
-      },
+      { "branch", icon = "", },
+      { "diff", symbols = { added = " ", modified = " ", removed = " " }, },
       {
         "diagnostics",
         sources = { "nvim_diagnostic" },
-        -- symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
-        symbols = { error = " ", warn = " ", info = "  ", hint = " " },
+        symbols = { error = " ", warn = " ", info = " ", hint = " " },
       },
     },
     lualine_c = {
@@ -96,33 +88,18 @@ require("lualine").setup({
           end
           return msg
         end,
-        icon = "  LSP:",
+        icon = " LSP:",
         color = { fg = "#97cc7f", gui = "bold" },
       },
-      {
-        "filetype",
-        color = { fg = "#51afef", gui = "bold" }
-      },
-      {
-        "encoding",
-        color = { fg = "#ec5f67" }
-      },
-      {
-        "fileformat",
-        color = { fg = "#c678dd" }
-      }
+      { "filetype", color = { fg = "#51afef", gui = "bold" } },
+      { "encoding", color = { fg = "#ec5f67" } },
+      { "fileformat", color = { fg = "#c678dd" } }
     },
     lualine_y = {
-      {
-        "location",
-        fmt = customLocation,
-      },
+      { "location", fmt = customLocation, },
     },
     lualine_z = {
-      {
-        "progress",
-        fmt = customProgress,
-      },
+      { "progress", fmt = customProgress, },
     },
   },
   inactive_sections = {

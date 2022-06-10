@@ -1,25 +1,28 @@
 local actions = require("telescope.actions")
+local layout = require("telescope.actions.layout")
 
 require("telescope").setup({
   defaults = {
     layout_config = {
       width = 0.75,
       prompt_position = "bottom",
-      preview_cutoff = 120,
+      preview_cutoff = 0,
       horizontal = { mirror = false },
       vertical = { mirror = false },
     },
     find_command = {
       "rg",
+      "--color=never",
       "--no-heading",
       "--with-filename",
       "--line-number",
       "--column",
       "--smart-case",
+      "--trim"
     },
     prompt_prefix = "  ",
     selection_caret = "  ",
-    entry_prefix = "  ",
+    entry_prefix = "",
     initial_mode = "insert",
     selection_strategy = "reset",
     sorting_strategy = "descending",
@@ -33,7 +36,7 @@ require("telescope").setup({
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     color_devicons = true,
     use_less = true,
-    set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+    set_env = { ["COLORTERM"] = "truecolor" },
     file_previewer = require("telescope.previewers").vim_buffer_cat.new,
     grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
@@ -46,6 +49,8 @@ require("telescope").setup({
         ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default + actions.center,
+        ["<C-u>"] = false,
+        ["<C-\\>"] = layout.toggle_preview,
       },
       n = {
         ["<C-n>"] = actions.move_selection_next,

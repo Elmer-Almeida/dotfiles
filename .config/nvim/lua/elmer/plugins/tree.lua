@@ -22,7 +22,7 @@ require("nvim-tree").setup({
   view = {
     width = 35,
     mappings = {
-      custom_only = true,
+      custom_only = false,
       list = {
         { key = "<CR>", action = "edit" },
         { key = "O", action = "edit_no_picker" },

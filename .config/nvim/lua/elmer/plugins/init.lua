@@ -19,6 +19,7 @@ return require("packer").startup(function()
       "kyazdani42/nvim-web-devicons",
     },
   })
+  use("stevearc/aerial.nvim")
   use("mbbill/undotree")
 
   use("christoomey/vim-tmux-navigator")
@@ -53,6 +54,7 @@ return require("packer").startup(function()
   use("onsails/lspkind.nvim")
 
   use("simrat39/rust-tools.nvim")
+  use("mattn/emmet-vim")
 
   use("mfussenegger/nvim-dap")
 
@@ -72,4 +74,5 @@ return require("packer").startup(function()
   require("elmer.plugins.null_ls")
   require("elmer.plugins.tree")
   require("elmer.plugins.toggleterm")
+  require("elmer.plugins.aerial")
 end)

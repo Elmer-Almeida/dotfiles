@@ -1,21 +1,23 @@
--- local null_ls = require("null-ls")
+local null_ls = require('null-ls')
 
--- local formatting = null_ls.builtins.formatting
--- local diagnostics = null_ls.builtins.diagnostics
--- local completion = null_ls.builtins.completion
+local formatting = null_ls.builtins.formatting
 
--- null_ls.setup({
---   sources = {
---     formatting.prettier.with({ extra_args = { "--semi", "--single-quote", "--jsx-single-quote" } }),
---     formatting.black.with({ extra_args = { "--fast" } }),
---     formatting.stylua,
---     formatting.rustfmt,
---     formatting.terrafmt,
---     formatting.terraform_fmt,
---     formatting.stylelint,
---     formatting.rustywind,
---   },
--- })
-
--- local opts = { noremap = true }
--- vim.api.nvim_set_keymap("n", "<leader>df", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
+null_ls.setup({
+  sources = {
+    formatting.prettier, formatting.black, formatting.gofmt, formatting.shfmt,
+    formatting.clang_format, formatting.cmake_format, formatting.dart_format,
+    formatting.isort, formatting.codespell.with({ filetypes = { 'markdown' } })
+  },
+  on_attach = function(client)
+    if client.resolved_capabilities.document_formatting then
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
+    end
+    vim.cmd [[
+      augroup document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      augroup END
+    ]]
+  end
+})

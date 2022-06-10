@@ -94,10 +94,7 @@ require("lualine").setup({
         icon = " LSP:",
         color = { fg = "#97cc7f", gui = "bold" },
       },
-      { "filetype", color = { fg = "#51afef", gui = "bold" } },
-      --{ "encoding", color = { fg = "#ec5f67" } },
-      --{ "encoding", color = { fg = "#b3bbc7" } },
-      --{ "fileformat", color = { fg = "#c678dd" } },
+      { "filetype", color = { fg = "#87c0d0", gui = "bold" } },
     },
     lualine_y = {
       {

@@ -11,6 +11,7 @@ vim.cmd([[ filetype plugin indent on ]])
 
 -- transparent background
 vim.cmd("autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE")
+vim.cmd("autocmd ColorScheme * highlight Visual term=reverse cterm=reverse guibg=#333333")
 
 ---------------------------------------------------
 -- Global options --

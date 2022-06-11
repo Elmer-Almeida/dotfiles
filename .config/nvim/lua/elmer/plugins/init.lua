@@ -3,8 +3,8 @@ local use = require("packer").use
 return require("packer").startup(function()
   use("wbthomason/packer.nvim")
 
-  use({ "lifepillar/vim-gruvbox8", config = "vim.cmd [[ colorscheme gruvbox8 ]]" })
-  --use({ "morhetz/gruvbox", config = "vim.cmd [[ colorscheme gruvbox ]]" })
+  --use({ "lifepillar/vim-gruvbox8", config = "vim.cmd [[ colorscheme gruvbox8 ]]" })
+  use({ "morhetz/gruvbox", config = "vim.cmd [[ colorscheme gruvbox ]]" })
   --use({ "joshdick/onedark.vim", config = "vim.cmd [[ colorscheme onedark ]]" })
 
   use({

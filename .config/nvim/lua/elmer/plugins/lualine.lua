@@ -31,10 +31,13 @@ local function fileNameAndSize(str)
   return size == "" and str or str .. " [" .. size .. "]"
 end
 
+local custom_onedark = require("lualine.themes.onedark")
+custom_onedark.normal.c.bg = "#2e3440"
+
 require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = "onedark",
+    theme = custom_onedark,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {},
@@ -92,7 +95,7 @@ require("lualine").setup({
           return msg
         end,
         icon = " LSP:",
-        color = { fg = "#97cc7f", gui = "bold" },
+        color = { fg = "#a3be8c", gui = "bold" },
       },
       { "filetype", color = { fg = "#87c0d0", gui = "bold" } },
     },
@@ -100,13 +103,13 @@ require("lualine").setup({
       {
         "location",
         fmt = customLocation,
-        color = { fg = "#c678dd", gui = "bold" },
+        color = { fg = "#b48ead" },
       },
-      { "encoding", color = { fg = "#ec5f67", gui = "bold" } },
+      { "encoding", color = { fg = "#bf616a" } },
     },
     lualine_z = {
       { "progress", fmt = customProgress },
-      "fileformat",
+      { "fileformat" },
     },
   },
   inactive_sections = {
